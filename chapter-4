@@ -1,0 +1,59 @@
+// Chapter 4 Objects & Arrays
+// Exercise: range & sum
+
+function range(start, end, step){
+  var numArray = [];
+  if (step == null) step = 1;
+  
+  if (step > 0) {
+   for (var i = start; i <= end; i += step){
+    numArray.push(i);
+   };
+  };
+    if (step < 0) {
+      for (var i = start; i >= end; i += step){
+    numArray.push(i);
+   };
+  };
+  return numArray;
+};
+
+function sum(numbers){
+  var total = 0;
+  for (var i = 0; i < numbers.length; i++){
+    total += numbers[i];
+  };
+  return total;
+};
+
+console.log(sum(range(1, 10)));
+// → 55
+console.log(range(5, 2, -1));
+
+// Exercise: reversing an array
+
+function reverseArray(array) {
+  var reversed = [];
+  for (i = 0; i < array.length; i++) {
+    reversed.unshift(array[i]);
+  };
+ return reversed;
+};
+
+// reverses the array in place. loops through half the length and switches the values in each space.
+
+function reverseArrayInPlace(array) {
+  for (i = 0; i < Math.floor(array.length / 2); i++) {
+   var x = array[array.length - 1 - i];
+    array[array.length - 1 - i] = array[i];
+    array[i] = x;
+  };
+  return array;
+};
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+var arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
