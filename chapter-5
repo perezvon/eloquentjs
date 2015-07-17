@@ -1,0 +1,8 @@
+// Flatten an Array
+//use reduce and concat to flatten an array of arrays into a single new array. 
+var arrays = [[1, 2, 3], [4, 5], [6]];
+var newArray = arrays.reduce(function(b, value){
+    return b.concat(value);
+   });
+console.log(newArray);
+// → [1, 2, 3, 4, 5, 6]
